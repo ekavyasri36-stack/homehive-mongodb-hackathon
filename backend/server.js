@@ -12,6 +12,9 @@ const reviewRoutes = require("./routes/reviewRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 
+// Emergency Assistance route
+const emergencyRoutes = require("./routes/emergencyRoutes");
+
 dotenv.config();
 
 connectDB();
@@ -28,6 +31,9 @@ app.use("/api/providers", providerRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/analytics", analyticsRoutes);
+
+// Emergency Assistance API
+app.use("/api/emergency", emergencyRoutes);
 
 app.get("/", (req, res) => {
   res.send("HomeHive Backend Running");
